@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ব্লগ | ডাঃ মোঃ রবিউল ইসলাম (রনি)</title>
+    <title>জীবনযাত্রা | ডাঃ মোঃ রবিউল ইসলাম (রনি)</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="timeline.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
@@ -22,9 +23,8 @@
 
         <div class="nav-links-desktop">
             <a href="index.html">Home</a>
-            <a href="index.html#services">Services</a>
-            <a href="timeline.html">Timeline</a>
-            <a href="blog.html" class="active">Blog</a>
+            <a href="timeline.html" class="active">Timeline</a>
+            <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
         </div>
 
@@ -35,7 +35,6 @@
 
     <nav class="nav-list" id="sidebar">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#services">Services</a></li>
         <li><a href="timeline.html">Timeline</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -44,16 +43,20 @@
 
     <div class="content">
 
-        <!-- BLOG HERO -->
+        <!-- TIMELINE HERO -->
         <section class="contact-hero">
-            <span class="hero-eyebrow">Blog</span>
-            <h1>খবর ও পরামর্শ</h1>
-            <p>ডাঃ রনির পক্ষ থেকে নিয়মিত লেখা, স্বাস্থ্য পরামর্শ এবং চেম্বার সংক্রান্ত হালনাগাদ।</p>
+            <span class="hero-eyebrow">Journey</span>
+            <h1>জীবনযাত্রা ও অর্জন</h1>
+            <p>শিক্ষাজীবন থেকে শুরু করে আজ পর্যন্ত — একজন চিকিৎসক হয়ে ওঠার পথচলা।</p>
         </section>
 
-        <section class="section" id="blog-section">
-            <div id="blog-grid" class="blog-grid">
-                <p class="blog-status">লেখা লোড হচ্ছে...</p>
+        <section class="section">
+            <div class="timeline" id="timeline">
+                <div class="timeline-line">
+                    <div class="timeline-line-fill" id="timelineLineFill"></div>
+                    <div class="timeline-traveler" id="timelineTraveler"></div>
+                </div>
+                <div class="timeline-items" id="timelineItems"></div>
             </div>
         </section>
 
@@ -69,9 +72,9 @@
                 </div>
                 <div class="div-li-z1">
                     <p class="z-p">Contact</p>
-                    <li class="li-z">📞 01710-258974</li>
-                    <li class="li-z">✉️ ronykyamc@gmail.com</li>
-                    <li class="li-z">📍 হসপিটাল রোড, সদর, শেরপুর</li>
+                    <li class="li-z"> 01710-258974</li>
+                    <li class="li-z"> ronykyamc@gmail.com</li>
+                    <li class="li-z"> হসপিটাল রোড, সদর, শেরপুর</li>
                 </div>
                 <div class="div-li-z1">
                     <p class="z-p">Follow</p>
@@ -89,17 +92,6 @@
     </div>
 
     <a class="float-call" href="tel:01710258974">📞 <span>কল করুন</span></a>
-
-    <!-- POST MODAL -->
-    <div class="post-overlay" id="postOverlay">
-        <div class="post-modal">
-            <button class="post-close" id="postClose" aria-label="বন্ধ করুন">✕</button>
-            <img id="postModalImg" class="post-modal-img" alt="">
-            <span class="post-modal-date" id="postModalDate"></span>
-            <h2 id="postModalTitle"></h2>
-            <div id="postModalBody" class="post-modal-body"></div>
-        </div>
-    </div>
 
     <script>
         const toggle = document.getElementById("sidebarToggle");
@@ -121,7 +113,7 @@
         }
     </script>
 
-    <script src="blog-shared.js"></script>
-    <script src="blog.js"></script>
+    <script src="timeline-data.js"></script>
+    <script src="timeline.js"></script>
 </body>
 </html>

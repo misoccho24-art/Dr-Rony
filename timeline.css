@@ -1,0 +1,195 @@
+/* =========================================================
+   TIMELINE PAGE
+   ========================================================= */
+
+.timeline {
+  position: relative;
+  padding: 20px 0 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  transform: translateX(-50%);
+  background: var(--line);
+  overflow: visible;
+}
+
+.timeline-line-fill {
+  position: relative;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--gold-light), var(--gold));
+  box-shadow: 0 0 16px rgba(201, 162, 75, 0.6);
+  transition: height 0.1s linear;
+}
+
+/* Glowing marker that travels down the line as you scroll */
+.timeline-traveler {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  width: 22px;
+  height: 22px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold-light) 0%, var(--gold) 55%, transparent 78%);
+  box-shadow: 0 0 18px 4px rgba(230, 205, 133, 0.65);
+  animation: travelerPulse 2.2s ease-in-out infinite;
+  z-index: 3;
+  pointer-events: none;
+}
+
+@keyframes travelerPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.25); }
+}
+
+.timeline-items {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 0 48px 72px;
+  opacity: 0;
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-item.in-view { opacity: 1; transform: translateX(0) scale(1) !important; }
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  transform: translateX(-36px) scale(0.97);
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  transform: translateX(36px) scale(0.97);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--ink-panel);
+  border: 2px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  transition: background 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease, transform 0.5s ease;
+  z-index: 2;
+}
+
+.timeline-item.left .timeline-dot { right: -20px; }
+.timeline-item.right .timeline-dot { left: -20px; }
+
+.timeline-item.in-view .timeline-dot {
+  background: radial-gradient(circle, var(--gold-light) 0%, var(--gold) 70%);
+  border-color: var(--gold-light);
+  box-shadow: 0 0 0 8px var(--gold-dim), 0 0 22px rgba(201, 162, 75, 0.5);
+  transform: scale(1.05);
+}
+
+.timeline-card {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(160deg, var(--ink-panel) 0%, var(--ink-panel-2) 100%);
+  border: 1px solid var(--line);
+  padding: 24px 28px;
+  max-width: 420px;
+  overflow: hidden;
+  transition: border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.timeline-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+
+.timeline-card:hover::before { opacity: 1; }
+
+.timeline-year {
+  display: inline-block;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.timeline-estimated-flag {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--ivory-faint);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.timeline-card h3 {
+  font-family: "Noto Serif Bengali", var(--font-display);
+  font-size: 19px;
+  color: var(--ivory);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.timeline-card p {
+  font-family: "Noto Sans Bengali", var(--font-body);
+  color: var(--ivory-soft);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.timeline-card img {
+  width: 100%;
+  margin-top: 14px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .timeline-line { left: 24px; }
+  .timeline-traveler { left: 24px; }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding: 0 16px 56px 66px;
+    transform: translateX(20px) scale(0.97);
+  }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 4px;
+    right: auto;
+    width: 34px;
+    height: 34px;
+    font-size: 15px;
+  }
+
+  .timeline-card { max-width: 100%; }
+}

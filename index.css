@@ -229,6 +229,10 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; color: var(--ivory); }
   z-index: 1500;
 }
 
+.active-mobile {
+  background-color: cyan;
+}
+
 .body {
   background: var(--black);
 }

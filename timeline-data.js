@@ -24,15 +24,15 @@ const timelineData = [
     {
         year: 2005,
         type: "education",
-        title: "এসএসসি পাস",
-        description: "জামালপুর জিলা স্কুল থেকে এসএসসি পরীক্ষায় উত্তীর্ণ হন।",
+        title: "এসএসসি উত্তীর্ণ",
+        description: "জামালপুর জেলা স্কুল থেকে এসএসসি পরীক্ষায় উত্তীর্ণ হন।",
         image: "",
         estimated: false
     },
     {
         year: 2007,
         type: "education",
-        title: "এইচএসসি পাস",
+        title: "এইচএসসি উত্তীর্ণ",
         description: "সরকারি আশেক মাহমুদ কলেজ থেকে এইচএসসি সম্পন্ন করেন।",
         image: "",
         estimated: false

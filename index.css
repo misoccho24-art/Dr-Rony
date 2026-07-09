@@ -640,6 +640,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; color: var(--ivory); }
   font-size: 14.5px;
   margin-bottom: 12px;
   transition: color 0.15s;
+  cursor: pointer;
 }
 
 a .li-z:hover, .li-z:hover { color: var(--ivory); }
@@ -691,9 +692,6 @@ a .li-z:hover, .li-z:hover { color: var(--ivory); }
   font-family: "Noto Sans Bengali", var(--font-body);
   font-size: 15.5px;
 }
-
-
-.hero-text {}
 
 .contact-grid {
   max-width: 900px;

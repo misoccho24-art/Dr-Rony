@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ডাঃ মোঃ সুরুজ জামান | Contact</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="index.html" class="brand">
+            <span>
+                <span class="brand-name">ডাঃ সুরুজ জামান</span>
+                <span class="brand-tag">আল্ট্রাসাউন্ড বিশেষজ্ঞ</span>
+            </span>
+        </a>
+
+        <div class="nav-links-desktop">
+            <a href="index.html">Home</a>
+            <a href="index.html#services">Services</a>
+                        <a href="blog.html" class="">Blog</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+
+        <a class="nav-call" href="tel:01780261010">সিরিয়াল করুন</a>
+
+        <div class="sidebar-toggle" id="sidebarToggle">☰</div>
+    </nav>
+
+    <nav class="nav-list" id="sidebar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="content">
+
+        <section class="contact-hero">
+            <h1>Contact</h1>
+            <p>সিরিয়াল বা যেকোনো তথ্যের জন্য যোগাযোগ করুন।</p>
+        </section>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <img class="c-icon" src="phone_in_talk_40dp_E3E3E3_FILL0_wght400_GRAD0_opsz40 (1).png" alt="">
+                <p class="c-label">Phone</p>
+                <p>01710-258974</p>
+            </div>
+
+            <div class="contact-card">
+                <img class="c-icon" src="mail_40dp_E3E3E3_FILL0_wght400_GRAD0_opsz40 (1).png" alt="">
+                <p class="c-label">Email</p>
+                <p>ronykyamc@gmail.com</p>
+            </div>
+
+            <div class="contact-card">
+                <img class="c-icon" src="alarm_40dp_E3E3E3_FILL0_wght400_GRAD0_opsz40 (1).png" alt="">
+                <p class="c-label">Working Hours</p>
+                <p>প্রতিদিন সকাল ১১টা - রাত ৮টা</p>
+            </div>
+
+            <div class="contact-card">
+                <img class="c-icon" src="location_on_40dp_E3E3E3_FILL0_wght400_GRAD0_opsz40.png" alt="">
+                <p class="c-label">Chamber</p>
+                <p>জামান মডার্ন হসপিটাল, ১১৮ কালির বাজার, শেরপুর টাউন, শেরপুর-২১০০</p>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="supreme">
+                <div class="div-li-z">
+                    <p class="z-p">Quick Links</p>
+                    <a href="index.html"><li class="li-z">Home</li></a>
+                    <a href="index.html#services"><li class="li-z">Services</li></a>
+                    <a href="contact.html"><li class="li-z">Contact</li></a>
+                </div>
+                <div class="div-li-z1">
+                    <p class="z-p">Contact</p>
+                    <li class="li-z">01710-258974</li>
+                    <li class="li-z">ronykyamc@gmail.com</li>
+                    <li class="li-z"> জামান মডার্ন হসপিটাল, শেরপুর</li>
+                </div>
+            </div>
+        </footer>
+
+        <div class="f-div">
+            <p class="f-p">© 2026 ডাঃ মোঃ সুরুজ জামান | Developed by M I</p>
+        </div>
+
+    </div>
+
+    <a class="float-call" href="tel:01780261010">📞 <span>কল করুন</span></a>
+
+    <script>
+        const toggle = document.getElementById("sidebarToggle");
+        const sidebar = document.getElementById("sidebar");
+        const overlay = document.getElementById("overlay");
+
+        function closeSidebar() {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+        }
+
+        if (toggle && sidebar) {
+            toggle.addEventListener("click", () => {
+                sidebar.classList.toggle("open");
+                overlay.classList.toggle("show");
+            });
+            overlay.addEventListener("click", closeSidebar);
+            sidebar.querySelectorAll("a").forEach(a => a.addEventListener("click", closeSidebar));
+        }
+    </script>
+</body>
+</html>

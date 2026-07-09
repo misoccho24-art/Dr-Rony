@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>ব্লগ পোস্ট করুন | ডাঃ রনি</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="body admin-body">
+
+    <div class="admin-wrap">
+
+        <!-- LOGIN VIEW -->
+        <div id="loginView" class="admin-card">
+            <span class="hero-eyebrow">Blog Admin</span>
+            <h1 class="admin-title">লগইন করুন</h1>
+            <p class="admin-sub">এই ওয়েবসাইটে ব্লগ পোস্ট করতে আপনার অ্যাক্সেস কোড (token) দিন। এটি একবার দিলে এই ডিভাইসে মনে রাখা হবে।</p>
+
+            <label class="admin-label">অ্যাক্সেস কোড</label>
+            <input type="password" id="tokenInput" class="admin-input" placeholder="আপনার কোডটি এখানে পেস্ট করুন">
+
+            <label class="admin-check">
+                <input type="checkbox" id="rememberCheck" checked>
+                <span>এই ডিভাইসে মনে রাখুন</span>
+            </label>
+
+            <button id="loginBtn" class="btn-primary admin-btn">লগইন করুন</button>
+            <p id="loginError" class="admin-error"></p>
+        </div>
+
+        <!-- ADMIN VIEW -->
+        <div id="adminView" class="admin-card" style="display:none;">
+            <div class="admin-head">
+                <div>
+                    <span class="hero-eyebrow">Blog Admin</span>
+                    <h1 class="admin-title">নতুন পোস্ট লিখুন</h1>
+                </div>
+                <button id="logoutBtn" class="admin-logout">লগআউট</button>
+            </div>
+
+            <label class="admin-label">শিরোনাম</label>
+            <input type="text" id="postTitle" class="admin-input" placeholder="পোস্টের শিরোনাম লিখুন">
+
+            <label class="admin-label">তারিখ</label>
+            <input type="text" id="postDate" class="admin-input">
+
+            <label class="admin-label">ছবি (ইচ্ছাধীন)</label>
+            <input type="file" id="postImage" class="admin-file" accept="image/*">
+            <img id="imgPreview" class="admin-img-preview" style="display:none;">
+
+            <label class="admin-label">লেখা</label>
+            <textarea id="postBody" class="admin-textarea" rows="10" placeholder="এখানে আপনার লেখা লিখুন। নতুন প্যারাগ্রাফের জন্য একটি ফাঁকা লাইন রাখুন।"></textarea>
+
+            <button id="publishBtn" class="btn-primary admin-btn">প্রকাশ করুন</button>
+            <p id="publishStatus" class="admin-status"></p>
+
+            <div class="admin-divider"></div>
+
+            <h2 class="admin-subtitle">আগের পোস্টসমূহ</h2>
+            <div id="postsList" class="admin-posts-list">
+                <p class="admin-status">লোড হচ্ছে...</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="blog-shared.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

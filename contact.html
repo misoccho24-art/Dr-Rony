@@ -49,25 +49,25 @@
             <div class="contact-card">
                 <img class="c-icon" src="phone_in_talk_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 <p class="c-label">Phone</p>
-                <p>01710-258974</p>
+                <p data-edit="contact.phone">01710-258974</p>
             </div>
 
             <div class="contact-card">
                 <img class="c-icon" src="mail_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 <p class="c-label">Email</p>
-                <p>ronykyamc@gmail.com</p>
+                <p data-edit="contact.email">ronykyamc@gmail.com</p>
             </div>
 
             <div class="contact-card">
                 <img class="c-icon" src="alarm_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 <p class="c-label">Working Hours</p>
-                <p>Daily 11:00 AM - 8:00 PM</p>
+                <p data-edit="contact.hours">Daily 11:00 AM - 8:00 PM</p>
             </div>
 
             <div class="contact-card">
                 <img class="c-icon" src="location_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="">
                 <p class="c-label">Chamber</p>
-                <p>Hospital Road, Sadar, Sherpur</p>
+                <p data-edit="contact.address">Hospital Road, Sadar, Sherpur</p>
             </div>
 
             <a href="https://www.facebook.com/profile.php?id=100075675588387">
@@ -98,9 +98,9 @@
                 </div>
                 <div class="div-li-z1">
                     <p class="z-p">Contact</p>
-                    <li class="li-z"> 01710-258974</li>
-                    <li class="li-z"> ronykyamc@gmail.com</li>
-                    <li class="li-z"> Hospital Road, Sadar, Sherpur</li>
+                    <li class="li-z" data-edit="contact.phone"> 01710-258974</li>
+                    <li class="li-z" data-edit="contact.email"> ronykyamc@gmail.com</li>
+                    <li class="li-z" data-edit="contact.address"> Hospital Road, Sadar, Sherpur</li>
                 </div>
 
                 <div class="div-li-z1">
@@ -138,6 +138,11 @@
             overlay.addEventListener("click", closeSidebar);
             sidebar.querySelectorAll("a").forEach(a => a.addEventListener("click", closeSidebar));
         }
+    </script>
+
+    <script type="module">
+        import { loadContent, applyTextFields } from "./content.js";
+        loadContent().then(applyTextFields);
     </script>
 </body>
 </html>

@@ -1,8 +1,11 @@
 /* =========================================================
-   Renders timelineData (from timeline-data.js) into alternating
+   Renders the timeline items (loaded from Firestore, via
+   content.js, with a hardcoded fallback) into alternating
    cards, then animates them in on scroll and fills the center
    line as the user scrolls through the section.
    ========================================================= */
+
+import { loadContent } from "./content.js";
 
 const TYPE_ICONS = {
     birth: "✨",
@@ -11,7 +14,7 @@ const TYPE_ICONS = {
     present: "📍"
 };
 
-function renderTimeline() {
+function renderTimeline(timelineData) {
     const container = document.getElementById("timelineItems");
     const sorted = [...timelineData].sort((a, b) => a.year - b.year);
 
@@ -78,6 +81,8 @@ function setupLineFill() {
     update();
 }
 
-renderTimeline();
-setupReveal();
-setupLineFill();
+loadContent().then(content => {
+    renderTimeline(content.timeline);
+    setupReveal();
+    setupLineFill();
+});

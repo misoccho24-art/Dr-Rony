@@ -49,10 +49,10 @@
                     <span class="badge-text">5.0 Rating — 25 Google Reviews</span>
                 </span>
                 <span class="hero-eyebrow">Sherpur's Experienced ENT Specialist</span>
-                <h1>Precise Care for Your Wellbeing</h1>
+                <h1 data-edit="hero.title">Precise Care for Your Wellbeing</h1>
                 <div class="hero-rule"></div>
-                <p class="hero-role">Dr. Md. Robiul Islam (Rony) — MBBS, DLO (ENT, BSMMU), Assistant Professor, Department of ENT & Head-Neck Surgery, Kumudini Women's Medical College & Hospital</p>
-                <p class="hero-sub">Nearly 10 years of experience — specializing in head-neck cancer surgery, micro-ear surgery, facial cosmetic surgery, and sleep apnea surgery.</p>
+                <p class="hero-role" data-edit="hero.role">Dr. Md. Robiul Islam (Rony) — MBBS, DLO (ENT, BSMMU), Assistant Professor, Department of ENT & Head-Neck Surgery, Kumudini Women's Medical College & Hospital</p>
+                <p class="hero-sub" data-edit="hero.sub">Nearly 10 years of experience — specializing in head-neck cancer surgery, micro-ear surgery, facial cosmetic surgery, and sleep apnea surgery.</p>
                 <div class="hero-actions">
                     <a class="btn-primary" href="tel:01710258974">Call to Book Appointment</a>
                     <a class="btn-ghost" href="#services">View Services</a>
@@ -189,32 +189,13 @@
                     <!-- TODO: confirm exact chamber hours before publishing -->
                     <p class="schedule-loc"> Hospital Road, Sadar, Sherpur-2100</p>
 
-                    <div class="schedule-table">
+                    <div class="schedule-table" id="scheduleTable">
                         <div class="schedule-row schedule-row-head">
                             <span>Day(s)</span>
                             <span>Time</span>
                             <span>Location</span>
                         </div>
-                        <div class="schedule-row">
-                            <span>Monday</span>
-                            <span>4:00 PM - 8:00 PM</span>
-                            <span>Uttara Specialized Hospital, Savar</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span>Tuesday</span>
-                            <span>8:00 PM</span>
-                            <span>Kumudini Women's Medical College & Hospital</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span>Tuesday, Wednesday, Thursday</span>
-                            <span>10:00 AM</span>
-                            <span>Jamalpur Uchcharas Hospital</span>
-                        </div>
-                        <div class="schedule-row">
-                            <span>Wednesday, Saturday, Sunday</span>
-                            <span>2:00 PM - 8:00 PM</span>
-                            <span>Proyukti Diagnostic Center</span>
-                        </div>
+                        <div id="scheduleRows"></div>
                     </div>
 
                     <a class="btn-primary" href="tel:01710258974">Call to Book Appointment</a>
@@ -235,9 +216,9 @@
                 </div>
                 <div class="div-li-z1">
                     <p class="z-p">Contact</p>
-                    <li class="li-z" href="tel:01710258974"> 01710-258974</li>
-                    <li class="li-z"> ronykyamc@gmail.com</li>
-                    <li class="li-z"> Hospital Road, Sadar, Sherpur</li>
+                    <li class="li-z" href="tel:01710258974" data-edit="contact.phone"> 01710-258974</li>
+                    <li class="li-z" data-edit="contact.email"> ronykyamc@gmail.com</li>
+                    <li class="li-z" data-edit="contact.address"> Hospital Road, Sadar, Sherpur</li>
                 </div>
                 <div class="div-li-z1">
                     <p class="z-p">Follow</p>
@@ -274,6 +255,32 @@
             overlay.addEventListener("click", closeSidebar);
             sidebar.querySelectorAll("a").forEach(a => a.addEventListener("click", closeSidebar));
         }
+    </script>
+
+    <script type="module">
+        import { loadContent, applyTextFields } from "./content.js";
+
+        function esc(str) {
+            const div = document.createElement("div");
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        function renderSchedule(rows) {
+            const wrap = document.getElementById("scheduleRows");
+            wrap.innerHTML = rows.map(r => `
+                <div class="schedule-row">
+                    <span>${esc(r.day)}</span>
+                    <span>${esc(r.time)}</span>
+                    <span>${esc(r.location)}</span>
+                </div>
+            `).join("");
+        }
+
+        loadContent().then(content => {
+            applyTextFields(content);
+            renderSchedule(content.schedule);
+        });
     </script>
 </body>
 </html>

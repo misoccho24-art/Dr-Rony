@@ -71,7 +71,7 @@ h1, h2, h3 { font-family: var(--font-display); margin: 0; color: var(--ivory); }
 }
 
 .brand::before {
-  content: "র";
+  content: "R";
   display: flex;
   align-items: center;
   justify-content: center;

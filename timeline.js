@@ -22,7 +22,7 @@ function renderTimeline() {
         el.innerHTML = `
             <div class="timeline-dot">${icon}</div>
             <div class="timeline-card">
-                <span class="timeline-year">${escapeHtml(String(item.year))}${item.estimated ? '<span class="timeline-estimated-flag">(আনুমানিক)</span>' : ""}</span>
+                <span class="timeline-year">${escapeHtml(String(item.year))}${item.estimated ? '<span class="timeline-estimated-flag">(estimated)</span>' : ""}</span>
                 <h3>${escapeHtml(item.title)}</h3>
                 <p>${escapeHtml(item.description)}</p>
                 ${item.image ? `<img src="${escapeAttr(item.image)}" alt="${escapeAttr(item.title)}" loading="lazy">` : ""}

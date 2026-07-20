@@ -1,5 +1,5 @@
 /* =========================================================
-   TIMELINE DATA — Dr. Md. Robiul Islam (Rony)
+   TIMELINE DATA — ডাঃ মোঃ রবিউল ইসলাম (রনি)
    ---------------------------------------------------------
    Fields:
    year        - number, used for sorting (oldest first)
@@ -16,72 +16,72 @@ const timelineData = [
     {
         year: 1988,
         type: "birth",
-        title: "Birth",
-        description: "Born in Shitol Kursha village, Jamalpur district.",
+        title: "জন্ম",
+        description: "জামালপুর জেলার সেতুভূষা গ্রামে জন্মগ্রহণ করেন।",
         image: "",
         estimated: false
     },
     {
         year: 2005,
         type: "education",
-        title: "Passed SSC",
-        description: "Passed the SSC examination from Jamalpur Zilla School.",
+        title: "এসএসসি উত্তীর্ণ",
+        description: "জামালপুর জেলা স্কুল থেকে এসএসসি পরীক্ষায় উত্তীর্ণ হন।",
         image: "",
         estimated: false
     },
     {
         year: 2007,
         type: "education",
-        title: "Passed HSC",
-        description: "Completed HSC from Government Ashek Mahmud College.",
+        title: "এইচএসসি উত্তীর্ণ",
+        description: "সরকারি আশেক মাহমুদ কলেজ থেকে এইচএসসি সম্পন্ন করেন।",
         image: "",
         estimated: false
     },
     {
         year: 2013,
         type: "education",
-        title: "Completed MBBS",
-        description: "Completed MBBS degree from Khwaja Yunus Ali Medical College, under Rajshahi University.",
+        title: "এমবিবিএস (MBBS) সম্পন্ন",
+        description: "রাজশাহী বিশ্ববিদ্যালয়ের অধীনে খাজা ইউনুস আলী মেডিকেল কলেজ থেকে এমবিবিএস ডিগ্রি সম্পন্ন করেন।",
         image: "",
         estimated: true
     },
     {
         year: 2014,
         type: "career",
-        title: "Joined as Medical Officer",
-        description: "Began his career as a Medical Officer in the Orthopedics department.",
+        title: "মেডিকেল অফিসার হিসেবে যোগদান",
+        description: "অর্থোপেডিক্স (হাড়-জোড়া) বিভাগে মেডিকেল অফিসার হিসেবে কর্মজীবন শুরু করেন।",
         image: "",
         estimated: true
     },
     {
         year: 2015,
         type: "education",
-        title: "Began Higher Studies — ENT",
-        description: "Enrolled at Sir Salimullah Medical College for higher studies in ENT (Ear, Nose & Throat).",
+        title: "উচ্চতর শিক্ষা শুরু — নাক-কান-গলা",
+        description: "নাক-কান-গলা (ইএনটি) বিষয়ে উচ্চতর শিক্ষার জন্য স্যার সলিমুল্লাহ মেডিকেল কলেজে ভর্তি হন।",
         image: "",
         estimated: true
     },
     {
         year: 2017,
         type: "career",
-        title: "Joined as Registrar",
-        description: "Joined as Registrar at Kumudini Women's Medical College, Tangail.",
+        title: "রেজিস্ট্রার হিসেবে যোগদান",
+        description: "কুমুদিনী উইমেন’স মেডিকেল কলেজ, টাঙ্গাইলে রেজিস্ট্রার হিসেবে যোগদান করেন।",
         image: "",
         estimated: false
     },
     {
         year: 2019,
         type: "career",
-        title: "Joined as ENT Specialist",
-        description: "Joined Khwaja Yunus Ali Medical College as an ENT Specialist.",
+        title: "ইএনটি স্পেশালিস্ট হিসেবে যোগদান",
+        description: "খাজা ইউনুস আলী মেডিকেল কলেজে নাক-কান-গলা বিশেষজ্ঞ হিসেবে যোগদান করেন।",
         image: "",
         estimated: false
     },
     {
         year: 2021,
         type: "career",
-        title: "Joined as Assistant Professor",
-        description: "Rejoined Kumudini Women's Medical College, Tangail, as Assistant Professor.",
+        title: "সহকারী অধ্যাপক হিসেবে যোগদান",
+        description: "কুমুদিনী উইমেন’স মেডিকেল কলেজ, টাঙ্গাইলে সহকারী অধ্যাপক হিসেবে পুনরায় যোগদান করেন।",
         image: "",
         estimated: false
     }
